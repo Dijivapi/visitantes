@@ -1,15 +1,8 @@
-var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true });
-
-mongoose.connection.on("error", function(e) { console.error(e); });
-
-
 const express = require("express");
 const mongoose = require("mongoose");
-
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/mongo-1', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/visitantes', { useNewUrlParser: true });
 
 const VisitorSchema = new mongoose.Schema({
     name: { type: String },
